@@ -15,6 +15,8 @@
       --cyan:   #00e5ff;
       --purple: #c000ff;
       --pink:   #ff0066;
+      --green:  #00ff88;
+      --gold:   #ffb400;
       --bg:     #020b14;
       --bg2:    #040f1c;
       --text:   #8ab8c8;
@@ -104,9 +106,7 @@
       text-transform: uppercase;
     }
 
-    .header-right span {
-      color: var(--pink);
-    }
+    .header-right span { color: var(--pink); }
 
     /* ── HERO ── */
     .hero {
@@ -122,7 +122,6 @@
       overflow: hidden;
     }
 
-    /* radial glow behind hero */
     .hero-glow {
       position: absolute;
       top: 50%;
@@ -154,7 +153,6 @@
         0 0 20px rgba(0,229,255,0.5),
         0 0 60px rgba(0,229,255,0.2),
         inset 0 0 30px rgba(0,229,255,0.05);
-      filter: hue-rotate(0deg) saturate(1.2);
       animation: hueshift 8s linear infinite;
     }
 
@@ -172,8 +170,7 @@
       top: -3px;
       left: 50%;
       transform: translateX(-50%);
-      width: 8px;
-      height: 8px;
+      width: 8px; height: 8px;
       background: var(--cyan);
       border-radius: 50%;
       box-shadow: 0 0 12px var(--cyan);
@@ -193,8 +190,7 @@
       bottom: -3px;
       left: 50%;
       transform: translateX(-50%);
-      width: 6px;
-      height: 6px;
+      width: 6px; height: 6px;
       background: var(--purple);
       border-radius: 50%;
       box-shadow: 0 0 10px var(--purple);
@@ -204,19 +200,17 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-16px); }
     }
-
     @keyframes ring-spin {
       from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      to   { transform: rotate(360deg); }
     }
-
     @keyframes hueshift {
-      0%   { filter: hue-rotate(0deg)   saturate(1.2); }
-      50%  { filter: hue-rotate(30deg)  saturate(1.5); }
-      100% { filter: hue-rotate(0deg)   saturate(1.2); }
+      0%   { filter: hue-rotate(0deg)  saturate(1.2); }
+      50%  { filter: hue-rotate(30deg) saturate(1.5); }
+      100% { filter: hue-rotate(0deg)  saturate(1.2); }
     }
 
-    /* ── HERO TITLE ── */
+    /* ── HERO TEXT ── */
     .hero-label {
       font-family: 'Share Tech Mono', monospace;
       font-size: 0.72rem;
@@ -239,7 +233,6 @@
       margin-bottom: 8px;
     }
 
-    /* Glitch layers */
     .hero-title::before,
     .hero-title::after {
       content: attr(data-text);
@@ -266,17 +259,17 @@
 
     @keyframes glitch-a {
       0%,90%,100% { opacity: 0; transform: translateX(0); }
-      91%          { opacity: 0.7; transform: translateX(-4px); clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%); }
-      93%          { transform: translateX(4px); clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%); }
-      95%          { transform: translateX(-2px); }
-      97%          { opacity: 0; }
+      91% { opacity: 0.7; transform: translateX(-4px); clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%); }
+      93% { transform: translateX(4px);  clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%); }
+      95% { transform: translateX(-2px); }
+      97% { opacity: 0; }
     }
 
     @keyframes glitch-b {
       0%,85%,100% { opacity: 0; transform: translateX(0); }
-      86%          { opacity: 0.6; transform: translateX(5px); clip-path: polygon(0 45%, 100% 45%, 100% 65%, 0 65%); }
-      88%          { transform: translateX(-5px); }
-      90%          { opacity: 0; }
+      86% { opacity: 0.6; transform: translateX(5px); clip-path: polygon(0 45%, 100% 45%, 100% 65%, 0 65%); }
+      88% { transform: translateX(-5px); }
+      90% { opacity: 0; }
     }
 
     .hero-subtitle {
@@ -290,16 +283,13 @@
 
     .cursor {
       display: inline-block;
-      width: 2px;
-      height: 1em;
+      width: 2px; height: 1em;
       background: var(--cyan);
       vertical-align: text-bottom;
       animation: blink 0.8s step-end infinite;
     }
 
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
+    @keyframes blink { 50% { opacity: 0; } }
 
     .hero-scroll {
       margin-top: 56px;
@@ -316,8 +306,7 @@
     }
 
     .scroll-arrow {
-      width: 20px;
-      height: 20px;
+      width: 20px; height: 20px;
       border-right: 2px solid rgba(0,229,255,0.4);
       border-bottom: 2px solid rgba(0,229,255,0.4);
       transform: rotate(45deg);
@@ -326,26 +315,25 @@
 
     @keyframes bounce-arrow {
       0%, 100% { transform: rotate(45deg) translateY(0); }
-      50% { transform: rotate(45deg) translateY(4px); }
+      50%       { transform: rotate(45deg) translateY(4px); }
     }
-
     @keyframes fade-up {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── SECTIONS ── */
+    /* ── SECTIONS WRAPPER ── */
     .sections {
       position: relative;
       z-index: 1;
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 0 40px 120px;
+      padding: 0 40px 80px;
     }
 
     .section-header {
       text-align: center;
-      margin-bottom: 64px;
+      margin-bottom: 48px;
     }
 
     .section-header h2 {
@@ -357,9 +345,7 @@
       letter-spacing: 0.15em;
     }
 
-    .section-header h2 span {
-      color: var(--cyan);
-    }
+    .section-header h2 span { color: var(--cyan); }
 
     .divider {
       display: flex;
@@ -376,229 +362,243 @@
     }
 
     .divider-dot {
-      width: 6px;
-      height: 6px;
+      width: 6px; height: 6px;
       background: var(--cyan);
       border-radius: 50%;
       box-shadow: 0 0 8px var(--cyan);
     }
 
-    /* ── CARDS ── */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 28px;
+    /* ── CONTRIBUTE BANNER ── */
+    .contribute-banner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(0,229,255,0.04);
+      border: 1px solid rgba(0,229,255,0.15);
+      border-left: 3px solid var(--cyan);
+      border-radius: 4px;
+      padding: 14px 20px;
+      margin-bottom: 40px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: rgba(0,229,255,0.7);
+      letter-spacing: 0.06em;
     }
 
+    .contribute-banner i {
+      color: var(--cyan);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contribute-banner strong {
+      color: var(--cyan);
+    }
+
+    .contribute-banner a {
+      color: var(--purple);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(192,0,255,0.4);
+      transition: color 0.2s;
+    }
+
+    .contribute-banner a:hover { color: #fff; }
+
+    /* ── CARDS GRID ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    /* ── CARD ── */
     .card {
       position: relative;
-      background: rgba(0,229,255,0.03);
-      border: 1px solid rgba(0,229,255,0.12);
+      background: rgba(0,229,255,0.025);
+      border: 1px solid rgba(0,229,255,0.1);
       border-radius: 4px;
-      padding: 36px 30px;
+      padding: 24px 22px 20px;
       overflow: hidden;
-      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-      cursor: default;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+      cursor: pointer;
     }
 
     .card::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(0,229,255,0.05) 0%, transparent 60%);
+      background: linear-gradient(135deg, rgba(0,229,255,0.04) 0%, transparent 60%);
       opacity: 0;
-      transition: opacity 0.35s ease;
+      transition: opacity 0.3s ease;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(0,229,255,0.4);
-      box-shadow:
-        0 0 30px rgba(0,229,255,0.12),
-        0 20px 60px rgba(0,0,0,0.4),
-        inset 0 1px 0 rgba(0,229,255,0.15);
-    }
-
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    /* corner decorations */
+    /* top-right corner bracket */
     .card::after {
       content: '';
       position: absolute;
       top: 0; right: 0;
-      width: 40px;
-      height: 40px;
-      border-top: 2px solid var(--cyan);
-      border-right: 2px solid var(--cyan);
-      opacity: 0.3;
-      transition: opacity 0.35s ease;
+      width: 32px; height: 32px;
+      border-top: 2px solid var(--card-color, var(--cyan));
+      border-right: 2px solid var(--card-color, var(--cyan));
+      opacity: 0.2;
+      transition: opacity 0.3s, width 0.3s, height 0.3s;
     }
 
-    .card:hover::after {
-      opacity: 0.8;
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--card-color, var(--cyan));
+      background: rgba(0,229,255,0.04);
+      box-shadow:
+        0 0 24px rgba(0,229,255,0.08),
+        0 16px 48px rgba(0,0,0,0.4);
     }
 
-    .card-corner-bl {
+    .card:hover::before { opacity: 1; }
+    .card:hover::after  { opacity: 0.7; width: 42px; height: 42px; }
+
+    /* bottom-left bracket */
+    .card-bl {
       position: absolute;
       bottom: 0; left: 0;
-      width: 30px;
-      height: 30px;
-      border-bottom: 2px solid var(--cyan);
-      border-left: 2px solid var(--cyan);
-      opacity: 0.15;
-      transition: opacity 0.35s ease;
+      width: 24px; height: 24px;
+      border-bottom: 2px solid var(--card-color, var(--cyan));
+      border-left: 2px solid var(--card-color, var(--cyan));
+      opacity: 0.12;
+      transition: opacity 0.3s;
     }
 
-    .card:hover .card-corner-bl {
-      opacity: 0.6;
+    .card:hover .card-bl { opacity: 0.6; }
+
+    /* ── status badge ── */
+    .card-status {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.52rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 2px;
     }
 
+    .status-pending {
+      background: rgba(255,180,0,0.08);
+      color: rgba(255,180,0,0.55);
+      border: 1px solid rgba(255,180,0,0.2);
+    }
+
+    .status-ready {
+      background: rgba(0,255,136,0.08);
+      color: rgba(0,255,136,0.7);
+      border: 1px solid rgba(0,255,136,0.25);
+      animation: status-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes status-pulse {
+      0%,100% { box-shadow: 0 0 0 rgba(0,255,136,0); }
+      50%      { box-shadow: 0 0 8px rgba(0,255,136,0.3); }
+    }
+
+    /* ── card num ── */
     .card-num {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 0.6rem;
-      color: rgba(0,229,255,0.3);
-      letter-spacing: 0.3em;
-      margin-bottom: 20px;
+      font-size: 0.55rem;
+      color: rgba(0,229,255,0.25);
+      letter-spacing: 0.2em;
+      margin-bottom: 14px;
     }
 
+    /* ── icon ── */
     .card-icon {
-      width: 52px;
-      height: 52px;
+      width: 44px; height: 44px;
       border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 22px;
-      position: relative;
-      transition: box-shadow 0.35s ease;
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--card-color, var(--cyan));
+      transition: box-shadow 0.3s;
     }
 
     .card:hover .card-icon {
-      animation: pulse-icon 1s ease infinite;
+      box-shadow: 0 0 16px var(--card-color, var(--cyan));
     }
 
-    @keyframes pulse-icon {
-      0%, 100% { box-shadow: 0 0 12px currentColor; }
-      50% { box-shadow: 0 0 28px currentColor, 0 0 50px currentColor; }
-    }
-
-    .icon-cyan   { background: rgba(0,229,255,0.1);   color: var(--cyan);   border: 1px solid rgba(0,229,255,0.25);   }
-    .icon-purple { background: rgba(192,0,255,0.1);   color: var(--purple); border: 1px solid rgba(192,0,255,0.25);   }
-    .icon-pink   { background: rgba(255,0,102,0.1);   color: var(--pink);   border: 1px solid rgba(255,0,102,0.25);   }
-    .icon-gold   { background: rgba(255,180,0,0.1);   color: #ffb400;       border: 1px solid rgba(255,180,0,0.25);   }
-    .icon-green  { background: rgba(0,255,136,0.1);   color: #00ff88;       border: 1px solid rgba(0,255,136,0.25);   }
-
+    /* ── card title ── */
     .card-title {
       font-family: 'Orbitron', monospace;
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       font-weight: 700;
       color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    /* ── student badge ── */
+    .card-student {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.63rem;
+      color: var(--card-color, var(--cyan));
+      opacity: 0.8;
       letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-      line-height: 1.3;
-    }
-
-    .card-text {
-      font-size: 0.88rem;
-      line-height: 1.75;
-      color: var(--text);
-    }
-
-    .card-tag {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 3px 10px;
-      border-radius: 2px;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .tag-cyan   { background: rgba(0,229,255,0.1);   color: var(--cyan);   border: 1px solid rgba(0,229,255,0.2);   }
-    .tag-purple { background: rgba(192,0,255,0.1);   color: var(--purple); border: 1px solid rgba(192,0,255,0.2);   }
-    .tag-pink   { background: rgba(255,0,102,0.1);   color: var(--pink);   border: 1px solid rgba(255,0,102,0.2);   }
-    .tag-gold   { background: rgba(255,180,0,0.1);   color: #ffb400;       border: 1px solid rgba(255,180,0,0.2);   }
-    .tag-green  { background: rgba(0,255,136,0.1);   color: #00ff88;       border: 1px solid rgba(0,255,136,0.2);   }
-
-    /* wide card (last one spans 2 cols on larger screens) */
-    .card-wide {
-      grid-column: span 2;
-    }
-
-    @media (max-width: 720px) {
-      .card-wide { grid-column: span 1; }
-    }
-
-    /* ── STAT ROW inside wide card ── */
-    .stat-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin-top: 20px;
-    }
-
-    .stat {
-      flex: 1;
-      min-width: 100px;
-    }
-
-    .stat-num {
-      font-family: 'Orbitron', monospace;
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: var(--cyan);
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.65rem;
-      color: rgba(0,229,255,0.5);
-      letter-spacing: 0.1em;
       margin-top: 4px;
     }
 
-    /* ── PROGRESS BARS ── */
-    .progress-item {
-      margin-top: 14px;
-    }
+    .card-student i { font-size: 0.6rem; }
 
-    .progress-label {
-      display: flex;
-      justify-content: space-between;
+    .card-no-student {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--text);
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.18);
       letter-spacing: 0.08em;
-      margin-bottom: 5px;
+      margin-top: 4px;
     }
 
-    .progress-bar {
-      height: 4px;
-      background: rgba(255,255,255,0.06);
-      border-radius: 2px;
-      overflow: hidden;
+    /* ── hover arrow ── */
+    .card-arrow {
+      position: absolute;
+      bottom: 18px;
+      right: 18px;
+      font-size: 0.7rem;
+      color: var(--card-color, var(--cyan));
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.3s, transform 0.3s;
     }
 
-    .progress-fill {
-      height: 100%;
-      border-radius: 2px;
-      position: relative;
-      animation: fill-in 1.5s ease 0.5s both;
+    .card:hover .card-arrow {
+      opacity: 0.7;
+      transform: translateX(0);
     }
 
-    @keyframes fill-in {
-      from { width: 0 !important; }
+    /* ── REVEAL ANIMATIONS ── */
+    .card {
+      opacity: 0;
+      transform: translateY(24px);
     }
 
-    .fill-cyan   { background: linear-gradient(90deg, var(--cyan), rgba(0,229,255,0.4));   box-shadow: 0 0 6px var(--cyan); }
-    .fill-purple { background: linear-gradient(90deg, var(--purple), rgba(192,0,255,0.4)); box-shadow: 0 0 6px var(--purple); }
-    .fill-pink   { background: linear-gradient(90deg, var(--pink), rgba(255,0,102,0.4));   box-shadow: 0 0 6px var(--pink); }
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -620,9 +620,7 @@
       letter-spacing: 0.1em;
     }
 
-    .footer-left span {
-      color: var(--cyan);
-    }
+    .footer-left span { color: var(--cyan); }
 
     .footer-right {
       font-family: 'Share Tech Mono', monospace;
@@ -631,31 +629,15 @@
       letter-spacing: 0.1em;
     }
 
-    /* ── ENTRANCE ANIMATIONS ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal:nth-child(2) { transition-delay: 0.1s; }
-    .reveal:nth-child(3) { transition-delay: 0.2s; }
-    .reveal:nth-child(4) { transition-delay: 0.3s; }
-    .reveal:nth-child(5) { transition-delay: 0.4s; }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       header { padding: 12px 20px; }
-      .sections { padding: 0 20px 80px; }
+      .sections { padding: 0 16px 60px; }
       .hero { padding: 100px 20px 60px; }
       footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
       .school-name { display: none; }
-      .hero-title { font-size: 1.6rem; }
+      .hero-title { font-size: 1.5rem; }
+      .cards-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -687,12 +669,9 @@
       />
     </div>
 
-    <p class="hero-label">// Informatik · Klasse 10 · LMG Düsseldorf //</p>
+    <p class="hero-label">// Informatik · LMG Düsseldorf //</p>
 
-    <h1
-      class="hero-title"
-      data-text="Gesellschaftliche Aspekte des Internets"
-    >
+    <h1 class="hero-title" data-text="Gesellschaftliche Aspekte des Internets">
       Gesellschaftliche Aspekte<br>des Internets
     </h1>
 
@@ -704,7 +683,7 @@
     </div>
   </section>
 
-  <!-- ── CARDS ── -->
+  <!-- ── TOPICS ── -->
   <section class="sections">
     <div class="section-header">
       <h2><span>//</span> Kernthemen <span>//</span></h2>
@@ -715,103 +694,17 @@
       </div>
     </div>
 
-    <div class="cards-grid">
-
-      <!-- 1 – Kommunikation -->
-      <div class="card reveal">
-        <div class="card-corner-bl"></div>
-        <div class="card-num">// 01</div>
-        <div class="card-icon icon-cyan"><i class="fa-solid fa-network-wired"></i></div>
-        <div class="card-title">Kommunikation &amp; Vernetzung</div>
-        <p class="card-text">
-          Das Internet hat menschliche Kommunikation revolutioniert: Milliarden Menschen tauschen sich in Echtzeit über Kontinente hinweg aus. Plattformen wie WhatsApp, Discord oder E-Mail ermöglichen neue Formen der Zusammenarbeit – verändern aber auch soziale Normen und das Tempo unserer Interaktionen.
-        </p>
-        <div class="progress-item">
-          <div class="progress-label"><span>Globale Nutzer</span><span>67 %</span></div>
-          <div class="progress-bar"><div class="progress-fill fill-cyan" style="width:67%"></div></div>
-        </div>
-        <div class="progress-item">
-          <div class="progress-label"><span>Mobiler Zugang</span><span>92 %</span></div>
-          <div class="progress-bar"><div class="progress-fill fill-cyan" style="width:92%"></div></div>
-        </div>
-        <span class="card-tag tag-cyan">Vernetzung</span>
+    <div class="contribute-banner">
+      <i class="fa-brands fa-github"></i>
+      <div>
+        <strong>Präsentation einreichen:</strong>
+        Leg eine Datei unter <strong>themen/[dein-thema]/index.html</strong> an und öffne einen
+        <a href="https://github.com" target="_blank">Pull Request</a> auf GitHub —
+        deine Karte wird dann automatisch aktiv.
       </div>
-
-      <!-- 2 – Datenschutz -->
-      <div class="card reveal">
-        <div class="card-corner-bl"></div>
-        <div class="card-num">// 02</div>
-        <div class="card-icon icon-purple"><i class="fa-solid fa-shield-halved"></i></div>
-        <div class="card-title">Privatsphäre &amp; Datenschutz</div>
-        <p class="card-text">
-          Jede Suchanfrage, jeder Klick hinterlässt digitale Spuren. Konzerne wie Google oder Meta sammeln und verwerten Nutzerdaten in bislang unerreichtem Ausmaß. Die EU-Datenschutzgrundverordnung (DSGVO) setzt rechtliche Grenzen – doch technische Umgehungen bleiben eine ständige Herausforderung.
-        </p>
-        <div class="progress-item">
-          <div class="progress-label"><span>Datenpunkte/Tag pro Nutzer</span><span>~4000</span></div>
-          <div class="progress-bar"><div class="progress-fill fill-purple" style="width:80%"></div></div>
-        </div>
-        <span class="card-tag tag-purple">Sicherheit</span>
-      </div>
-
-      <!-- 3 – Fake News -->
-      <div class="card reveal">
-        <div class="card-corner-bl"></div>
-        <div class="card-num">// 03</div>
-        <div class="card-icon icon-pink"><i class="fa-solid fa-triangle-exclamation"></i></div>
-        <div class="card-title">Fake News &amp; Manipulation</div>
-        <p class="card-text">
-          Desinformation verbreitet sich online 6× schneller als wahre Meldungen. Deepfakes, Bot-Netzwerke und algorithmische Echokammern verstärken gesellschaftliche Spaltung. Medienkompetenz wird zur Schlüsselkompetenz des 21. Jahrhunderts, um zwischen Fakten und Fiktion zu unterscheiden.
-        </p>
-        <div class="progress-item">
-          <div class="progress-label"><span>Fake News Verbreitungsrate</span><span>6×</span></div>
-          <div class="progress-bar"><div class="progress-fill fill-pink" style="width:75%"></div></div>
-        </div>
-        <span class="card-tag tag-pink">Kritisch</span>
-      </div>
-
-      <!-- 4 – Digitale Ungleichheit (wide) -->
-      <div class="card card-wide reveal">
-        <div class="card-corner-bl"></div>
-        <div class="card-num">// 04</div>
-        <div class="card-icon icon-gold"><i class="fa-solid fa-globe"></i></div>
-        <div class="card-title">Digitale Ungleichheit</div>
-        <p class="card-text">
-          Weltweit haben 2,6 Milliarden Menschen keinen Internetzugang. Der „Digital Divide" vertieft bestehende soziale Ungleichheiten: Ohne digitale Teilhabe sind Bildung, Arbeit und gesellschaftliche Partizipation im 21. Jahrhundert massiv eingeschränkt. Auch innerhalb reicher Länder bestehen erhebliche Unterschiede nach Alter, Einkommen und Region.
-        </p>
-        <div class="stat-row">
-          <div class="stat">
-            <div class="stat-num" style="color:#ffb400;">2,6 Mrd</div>
-            <div class="stat-label" style="color:rgba(255,180,0,0.5);">offline weltweit</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num" style="color:#ffb400;">37 %</div>
-            <div class="stat-label" style="color:rgba(255,180,0,0.5);">der Weltbevölkerung</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num" style="color:#ffb400;">4×</div>
-            <div class="stat-label" style="color:rgba(255,180,0,0.5);">Einkommenslücke bei Zugang</div>
-          </div>
-        </div>
-        <span class="card-tag tag-gold" style="margin-top:24px;">Soziale Gerechtigkeit</span>
-      </div>
-
-      <!-- 5 – Soziale Medien -->
-      <div class="card reveal">
-        <div class="card-corner-bl"></div>
-        <div class="card-num">// 05</div>
-        <div class="card-icon icon-green"><i class="fa-solid fa-user-astronaut"></i></div>
-        <div class="card-title">Soziale Medien &amp; Identität</div>
-        <p class="card-text">
-          Instagram, TikTok &amp; Co. prägen Selbstbild und Identitätsbildung – besonders bei Jugendlichen. Likes, Follower-Zahlen und kuratierte Selbstdarstellung erzeugen sozialen Druck und können das psychische Wohlbefinden beeinträchtigen. Gleichzeitig bieten diese Räume Möglichkeiten zur Selbstentfaltung und Community-Building.
-        </p>
-        <div class="progress-item">
-          <div class="progress-label"><span>Jugendliche tägl. aktiv</span><span>89 %</span></div>
-          <div class="progress-bar"><div class="progress-fill" style="width:89%;background:linear-gradient(90deg,#00ff88,rgba(0,255,136,0.4));box-shadow:0 0 6px #00ff88"></div></div>
-        </div>
-        <span class="card-tag tag-green">Identität</span>
-      </div>
-
     </div>
+
+    <div class="cards-grid" id="cardsGrid"></div>
   </section>
 
   <!-- ── FOOTER ── -->
@@ -820,16 +713,98 @@
       <span>LMG DÜSSELDORF</span> · Informatik · Gesellschaftliche Aspekte des Internets
     </div>
     <div class="footer-right">
-      SYS:// 2026 · DSGVO-konform
+      SYS:// 2026 · 20 Themen
     </div>
   </footer>
 
   <script>
+    // ── TOPIC DATA ──
+    const topics = [
+      { id: 'iot',               title: 'Internet of Things',                      subtitle: 'IoT',            student: 'Lutz',      icon: 'fa-microchip',              color: '#00e5ff' },
+      { id: 'datenschutz',       title: 'Datenschutz',                             subtitle: 'Privacy',        student: 'Anna',      icon: 'fa-shield-halved',          color: '#c000ff' },
+      { id: 'creative-commons',  title: 'Creative Commons',                        subtitle: 'Lizenzen',       student: 'Elyan',     icon: 'fa-creative-commons',       color: '#00ff88' },
+      { id: 'vorratsdaten',      title: 'Vorratsdaten­speicherung',               subtitle: 'Surveillance',   student: null,        icon: 'fa-database',               color: '#ffb400' },
+      { id: 'netzneutralitaet',  title: 'Netzneutralität',                        subtitle: 'Net Neutrality', student: 'Viktor',    icon: 'fa-scale-balanced',         color: '#00e5ff' },
+      { id: 'algo-bias',         title: 'Bias &amp; Diskriminierung in Algorithmen', subtitle: 'Fairness',    student: 'Maria',     icon: 'fa-robot',                  color: '#ff0066' },
+      { id: 'deepfakes',         title: 'Deepfakes &amp; Desinformation',          subtitle: 'Manipulation',  student: 'Hanife',    icon: 'fa-wand-magic-sparkles',    color: '#ff0066' },
+      { id: 'urheberrecht-ki',   title: 'Urheberrecht bei KI-generierten Inhalten', subtitle: 'Copyright',   student: 'Lynn',      icon: 'fa-copyright',              color: '#c000ff' },
+      { id: 'automatisierung',   title: 'Automatisierung &amp; Arbeitswelt',       subtitle: 'Future of Work',student: 'Lennart',   icon: 'fa-gears',                  color: '#ffb400' },
+      { id: 'clawdbot',          title: 'Clawdbot',                               subtitle: 'Web Crawling',   student: 'Leo',       icon: 'fa-spider',                 color: '#00e5ff' },
+      { id: 'filterblasen',      title: 'Filterblasen &amp; Echo Chambers',        subtitle: 'Bubble',        student: 'Jana',      icon: 'fa-bullseye',               color: '#c000ff' },
+      { id: 'bots-manipulation', title: 'Bots &amp; politische Manipulation',      subtitle: 'Astroturfing',  student: 'Daria',     icon: 'fa-chess-knight',           color: '#ff0066' },
+      { id: 'cybersecurity',     title: 'Phishing, Hacking, Ransomware',           subtitle: 'Cybercrime',    student: 'Matthis',   icon: 'fa-skull-crossbones',       color: '#ff0066' },
+      { id: 'cyberwar',          title: 'Staatliche Cyberangriffe',               subtitle: 'Cyberwar',       student: 'Anouk',     icon: 'fa-satellite-dish',         color: '#ff0066' },
+      { id: 'open-source',       title: 'Open Source vs. Closed Source',           subtitle: 'Transparency',  student: 'Achilleas', icon: 'fa-code-branch',            color: '#00ff88' },
+      { id: 'energieverbrauch',  title: 'Energieverbrauch von Rechenzentren',      subtitle: 'Green IT',      student: null,        icon: 'fa-plug-circle-bolt',       color: '#ffb400' },
+      { id: 'obsoleszenz',       title: 'Geplante Obsoleszenz',                   subtitle: 'Sustainability', student: 'Halima',    icon: 'fa-hourglass-end',          color: '#ffb400' },
+      { id: 'klarnamenpflicht',  title: 'Klarnamenpflicht',                       subtitle: 'Anonymity',      student: null,        icon: 'fa-id-card',                color: '#c000ff' },
+      { id: 'recht-vergessen',   title: 'Recht auf Vergessenwerden',              subtitle: 'Right to Forget',student: 'Christina', icon: 'fa-eraser',                 color: '#00e5ff' },
+      { id: 'darknet',           title: 'Darknet',                                subtitle: 'Dark Web',       student: 'Yachya',    icon: 'fa-eye-slash',              color: '#c000ff' },
+    ];
+
+    // ── RENDER CARDS ──
+    const grid = document.getElementById('cardsGrid');
+
+    topics.forEach((t, i) => {
+      const num = String(i + 1).padStart(2, '0');
+      const href = `themen/${t.id}/index.html`;
+
+      const card = document.createElement('a');
+      card.className = 'card';
+      card.href = href;
+      card.style.setProperty('--card-color', t.color);
+      card.style.transitionDelay = `${(i % 4) * 0.07}s`;
+
+      card.innerHTML = `
+        <div class="card-bl"></div>
+        <div class="card-status status-pending">ausstehend</div>
+        <div class="card-num">// ${num}</div>
+        <div class="card-icon"><i class="fa-solid ${t.icon}"></i></div>
+        <div class="card-title">${t.title}</div>
+        <div class="card-sub"
+          style="font-family:'Share Tech Mono',monospace;font-size:0.58rem;
+                 color:rgba(255,255,255,0.2);letter-spacing:0.15em;margin-bottom:8px;
+                 text-transform:uppercase;"
+        >${t.subtitle}</div>
+        ${t.student
+          ? `<div class="card-student"><i class="fa-solid fa-user"></i> ${t.student}</div>`
+          : `<div class="card-no-student">kein/e Schüler:in</div>`}
+        <i class="fa-solid fa-arrow-right card-arrow"></i>
+      `;
+
+      grid.appendChild(card);
+    });
+
+    // ── CHECK WHICH FILES EXIST & mark as ready ──
+    document.querySelectorAll('.card').forEach(card => {
+      fetch(card.href, { method: 'HEAD' })
+        .then(r => {
+          if (r.ok) {
+            const badge = card.querySelector('.card-status');
+            badge.textContent = 'verfügbar';
+            badge.classList.replace('status-pending', 'status-ready');
+          }
+        })
+        .catch(() => {});
+    });
+
+    // ── SCROLL REVEAL ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll('.card').forEach(c => observer.observe(c));
+
     // ── TYPING EFFECT ──
     const phrases = [
       'Wie verändert das Internet unsere Gesellschaft?',
       'Vernetzung · Datenschutz · Identität · Teilhabe',
-      'Medienkompetenz im digitalen Zeitalter.',
+      '20 Themen. 20 Schüler:innen. Eine digitale Welt.',
     ];
 
     let phraseIdx = 0, charIdx = 0, deleting = false;
@@ -837,41 +812,20 @@
 
     function type() {
       const current = phrases[phraseIdx];
-      const displayed = deleting
-        ? current.slice(0, charIdx--)
-        : current.slice(0, charIdx++);
-
+      const displayed = deleting ? current.slice(0, charIdx--) : current.slice(0, charIdx++);
       el.innerHTML = displayed + '<span class="cursor"></span>';
 
-      let delay = deleting ? 40 : 65;
-
+      let delay = deleting ? 38 : 62;
       if (!deleting && charIdx > current.length) {
-        delay = 2000;
-        deleting = true;
+        delay = 2200; deleting = true;
       } else if (deleting && charIdx < 0) {
-        deleting = false;
-        charIdx = 0;
+        deleting = false; charIdx = 0;
         phraseIdx = (phraseIdx + 1) % phrases.length;
         delay = 400;
       }
-
       setTimeout(type, delay);
     }
-
     setTimeout(type, 1200);
-
-    // ── SCROLL REVEAL ──
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    reveals.forEach(r => observer.observe(r));
   </script>
 </body>
 </html>
