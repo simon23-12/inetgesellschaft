@@ -742,12 +742,37 @@
       { id: 'darknet',           title: 'Darknet',                                subtitle: 'Dark Web',       student: 'Yachya',    icon: 'fa-eye-slash',              color: '#c000ff' },
     ];
 
+    // ── PLACEHOLDER-URLS FÜR SCHÜLER-PRÄSENTATIONEN ──
+    // Hier nur die URL-Werte austauschen, sobald die finalen Präsentationslinks da sind.
+    const studentPresentationUrls = {
+      Lutz: 'https://example.com/praesentation/lutz',
+      Anna: 'https://example.com/praesentation/anna',
+      Elyan: 'https://example.com/praesentation/elyan',
+      Viktor: 'https://example.com/praesentation/viktor',
+      Maria: 'https://example.com/praesentation/maria',
+      Hanife: 'https://example.com/praesentation/hanife',
+      Lynn: 'https://example.com/praesentation/lynn',
+      Lennart: 'https://example.com/praesentation/lennart',
+      Leo: 'https://example.com/praesentation/leo',
+      Jana: 'https://example.com/praesentation/jana',
+      Daria: 'https://example.com/praesentation/daria',
+      Matthis: 'https://example.com/praesentation/matthis',
+      Anouk: 'https://example.com/praesentation/anouk',
+      Achilleas: 'https://example.com/praesentation/achilleas',
+      Halima: 'https://example.com/praesentation/halima',
+      Christina: 'https://example.com/praesentation/christina',
+      Yachya: 'https://example.com/praesentation/yachya',
+    };
+
     // ── RENDER CARDS ──
     const grid = document.getElementById('cardsGrid');
 
     topics.forEach((t, i) => {
       const num = String(i + 1).padStart(2, '0');
-      const href = `themen/${t.id}/index.html`;
+      const fallbackHref = `themen/${t.id}/index.html`;
+      const href = t.student
+        ? (studentPresentationUrls[t.student] || fallbackHref)
+        : fallbackHref;
 
       const card = document.createElement('a');
       card.className = 'card';
